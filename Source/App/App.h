@@ -1,7 +1,7 @@
 #pragma once
 #include <vector>
 #include <memory>
-#include <string>
+#include <string_view>
 #include "Object.h"
 
 struct GLFWwindow;
@@ -12,7 +12,7 @@ class App
 {
 public:
 	App();
-	App(std::string name);
+	App(std::string_view name);
 	~App();
 
 	App(const App& app) = delete;
@@ -25,7 +25,7 @@ public:
 	GLFWwindow* GetWindow() { return m_Window; }
 
 private:
-	void Init(std::string name = "");
+	void Init(std::string_view name = "");
 
 	bool m_Running = false;
 

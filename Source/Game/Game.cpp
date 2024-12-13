@@ -3,7 +3,7 @@
 
 static Game* s_Instance = nullptr;
 
-Game::Game(std::string name) : m_App(name)
+Game::Game(std::string_view name) : m_App(name)
 {
 	m_App.AddObjectToDraw(m_Grid);
 	m_InputManager.Init(m_App.GetWindow());
@@ -13,7 +13,7 @@ Game::~Game()
 {
 }
 
-void Game::Init(std::string name)
+void Game::Init(std::string_view name)
 {
 	assert(!s_Instance);
 	s_Instance = new Game(name);

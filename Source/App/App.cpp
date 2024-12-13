@@ -376,7 +376,7 @@ App::App()
     Init();
 }
 
-App::App(std::string name)
+App::App(std::string_view name)
 {
     Init(name);
 }
@@ -396,7 +396,7 @@ App::~App()
     glfwTerminate();
 }
 
-void App::Init(std::string name)
+void App::Init(std::string_view name)
 {
     glfwSetErrorCallback(glfw_error_callback);
     if (!glfwInit())

@@ -10,7 +10,7 @@ class Game
 public:
 	~Game();
 
-	static void Init(std::string name = "");
+	static void Init(std::string_view name = "");
 
 	static void Shutdown();
 
@@ -19,7 +19,7 @@ public:
 	void Run();
 
 private:
-	Game(std::string name);
+	Game(std::string_view name);
 
 	App m_App;
 
