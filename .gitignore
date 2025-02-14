@@ -1,7 +1,7 @@
 /.vs
 /Binaries
 /imgui.ini
-/Tic Tac Toe.vcxproj.user
-/Tic Tac Toe.vcxproj.filters
-/Tic Tac Toe.vcxproj
-/Tic Tac Toe.sln
+*.vcxproj
+*.vcxproj.user
+*.vcxproj.filters
+*.sln
