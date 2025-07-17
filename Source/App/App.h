@@ -24,8 +24,14 @@ public:
 
 	GLFWwindow* GetWindow() { return m_Window; }
 
+	ImVec2 GetWindowSize() const { return ImVec2(width, height); }
+
 private:
 	void Init(std::string_view name = "");
+
+	static constexpr uint16_t width = 1920;
+	static constexpr uint16_t height = 1080;
+	static constexpr ImVec4 clearColour = ImVec4(0.17f, 0.17f, 0.17f, 1.00f);
 
 	bool m_Running = false;
 

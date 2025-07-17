@@ -403,7 +403,7 @@ void App::Init(std::string_view name)
         return;
 
     glfwWindowHint(GLFW_CLIENT_API, GLFW_NO_API);
-    m_Window = glfwCreateWindow(1920, 1080, name.data(), nullptr, nullptr);
+    m_Window = glfwCreateWindow(width, height, name.data(), nullptr, nullptr);
 
     if (!glfwVulkanSupported())
     {
@@ -464,7 +464,7 @@ void App::Run()
 {
     m_Running = true;
     ImGui_ImplVulkanH_Window* wd = &g_MainWindowData;
-    ImVec4 clear_color = ImVec4(0.17f, 0.17f, 0.17f, 1.00f);
+    //ImVec4 clear_color = ImVec4(0.17f, 0.17f, 0.17f, 1.00f);
     ImGuiIO& io = ImGui::GetIO();
 
     while (!glfwWindowShouldClose(m_Window) && m_Running)
@@ -506,10 +506,10 @@ void App::Run()
         const bool is_minimized = (draw_data->DisplaySize.x <= 0.0f || draw_data->DisplaySize.y <= 0.0f);
         if (!is_minimized)
         {
-            wd->ClearValue.color.float32[0] = clear_color.x * clear_color.w;
-            wd->ClearValue.color.float32[1] = clear_color.y * clear_color.w;
-            wd->ClearValue.color.float32[2] = clear_color.z * clear_color.w;
-            wd->ClearValue.color.float32[3] = clear_color.w;
+            wd->ClearValue.color.float32[0] = clearColour.x * clearColour.w;
+            wd->ClearValue.color.float32[1] = clearColour.y * clearColour.w;
+            wd->ClearValue.color.float32[2] = clearColour.z * clearColour.w;
+            wd->ClearValue.color.float32[3] = clearColour.w;
             FrameRender(wd, draw_data);
             FramePresent(wd);
         }

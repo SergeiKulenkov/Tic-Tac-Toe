@@ -1,12 +1,21 @@
 #include "Game.h"
+
 #include "../App/KeyCodes.h"
+
+////////////////////
 
 static Game* s_Instance = nullptr;
 
 Game::Game(std::string_view name) : m_App(name)
 {
 	m_App.AddObjectToDraw(m_Grid);
+	m_App.AddObjectToDraw(m_Menu);
 	m_InputManager.Init(m_App.GetWindow());
+	
+	m_Menu->Init(m_App.GetWindowSize(), ImGui::ColorConvertU32ToFloat4(Cell::GetColour()));
+
+	m_Grid->SettGameOverCallback([this](CellType winner) { GameOver(winner); });
+	m_Grid->SetMenuEvents(*m_Menu);
 }
 
 Game::~Game()

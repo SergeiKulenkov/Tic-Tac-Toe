@@ -9,13 +9,13 @@ struct GLFWwindow;
 class InputManager
 {
 public:
-	void Init(GLFWwindow* window);
+	void Init(GLFWwindow* window) { m_Window = window; }
 
-	static bool IsKeyDown(KeyCode keycode);
+	static bool IsKeyDown(const KeyCode keycode);
 
-	static bool IsMouseButtonDown(MouseButton button);
+	static bool IsMouseButtonDown(const MouseButton button);
 
-	static bool IsMouseButtonUp(MouseButton button);
+	static bool IsMouseButtonUp(const MouseButton button);
 
 	static glm::vec2 GetMousePosition();
 
