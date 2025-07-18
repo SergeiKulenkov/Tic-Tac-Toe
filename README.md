@@ -7,7 +7,7 @@
   * grid colour
 
 ### Other features:
-  * the bot uses minmax algorithm with alpha-beta pruning
+  * the bot uses minimax algorithm with alpha-beta pruning
   * couple other optimizations like only checking the best empty cells and ordering them by most neighbours
   * the winner is highlighted yellow and there's a Game Over window with a Restart button
   * the system is very dynamic, so it can easily be configured for even bigger grids just by changing two config values
